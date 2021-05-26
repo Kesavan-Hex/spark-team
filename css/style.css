@@ -1,0 +1,145 @@
+
+body{
+	font-family: sans-serif;
+	line-height: 1.5;
+}
+*,
+::before,
+::after{
+	box-sizing: border-box;
+	margin:0;
+}
+img{
+	max-width: 100%;
+	vertical-align: middle;
+}
+.section-title{
+	padding: 0 15px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 60px
+}
+.section-title h2{
+	color: #ffffff;
+	font-size: 40px;
+	text-transform: capitalize;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+/*team-section*/
+.team-section{
+	min-height: 100vh;
+	background-color: #19222e;
+	padding: 80px 0;
+}
+.team-section .card{
+	width: calc((100% / 3) - 30px);
+	margin:0 15px 40px;
+	padding: 30px 0 0;
+	position: relative;
+}
+.team-section .card-img{
+	width: 150px;
+	height: 150px;
+	margin:auto;
+	border-radius: 50%;
+	transition: box-shadow 0.3s ease;
+	border:5px solid transparent;
+}
+.team-section .card:hover .card-img{
+	box-shadow: 0 0 10px #ffffff;
+}
+.team-section .card-img img{
+	border-radius: 50%;
+}
+
+.team-section .card-info{
+	background-color: #ffffff;
+	padding: 20px 15px;
+	text-align: center;
+	position: absolute;
+	left:0;
+	bottom: 100%;
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+}
+.team-section .card:hover .card-info{
+	visibility: visible;
+	opacity: 1;
+	transition: all 0.3s ease;
+}
+.team-section .card-info::before{
+	content: '';
+	position: absolute;
+	left:calc(50% - 20px);
+	top: 100%;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #ffffff;
+}
+.team-section .card-info h3{
+	font-size: 24px;
+	text-transform: capitalize;
+	color: #000000;
+}
+.team-section .card-info p{
+	font-size: 16px;
+	color: #666666;
+	margin:0 0 10px;
+}
+.team-section .card-info .social-icons a{
+	display: inline-block;
+	margin:3px;
+	padding: 5px;
+	border-radius: 4px;
+	transition: all 0.3s ease;
+}
+.team-section .card-info .social-icons a:hover{
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.team-section .card-info .social-icons img{
+	width: 25px;
+}
+
+/*responsive*/
+
+@media(max-width: 991px){
+	.team-section .card{
+		width: calc(50% - 30px);
+		background-color: #ffffff;
+		padding:0 15px;
+	}
+	.team-section .card-info{
+		position: relative;
+		visibility: visible;
+		opacity: 1;
+		bottom: auto;
+		left:auto;
+	}
+	.team-section .card-img{
+		margin:30px auto 10px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	}
+	.team-section .card:hover .card-img{
+	   box-shadow: 0 0 10px rgba(0,0,0,0.5);	
+	}
+	.team-section .card-info::before{
+		content: none;
+	}
+	.team-section .card-info{
+		padding:20px 0 30px;
+	}
+}
+
+@media(max-width: 574px){
+	.team-section .card{
+      width: calc(100% - 30px);
+   }
+}
